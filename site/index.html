@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07172f">
+  <meta name="description" content="Follow Saint Viator volleyball coach Charlie Curtin on the road to 500 career wins. Automatic result checks, milestones, and live countdown.">
+  <meta property="og:title" content="Charlie Curtin | The Road to 500">
+  <meta property="og:description" content="Every win counts. Follow Coach Curtin's journey to 500 career victories.">
+  <meta property="og:type" content="website">
+  <title>Charlie Curtin | The Road to 500</title>
+  <style>
+    :root {
+      --navy: #07172f;
+      --deep: #061125;
+      --ink: #10264a;
+      --ink-soft: #6d7990;
+      --blue: #3989f9;
+      --blue-bright: #6cb9ff;
+      --pale-blue: #e9f3ff;
+      --white: #fff;
+      --paper: #f3f6fb;
+      --line: #dce4f0;
+      --max: 1200px;
+      --display: Impact, 'Arial Narrow', 'Franklin Gothic Heavy', 'Arial Black', sans-serif;
+      --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); font-family: var(--sans); background: var(--paper); -webkit-font-smoothing: antialiased; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    a { color: inherit; }
+    button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid #8cc4ff; outline-offset: 4px; }
+    .wrap { width: min(var(--max), calc(100% - 72px)); margin-inline: auto; }
+    .dark-shell { overflow: hidden; position: relative; isolation: isolate; color: white; background: radial-gradient(ellipse 75% 100% at 85% 30%, #123c75 0%, transparent 65%), linear-gradient(132deg, #07172f 0%, #081d3d 60%, #07152a 100%); }
+    .dark-shell::before { content: ''; pointer-events: none; position: absolute; z-index: -1; width: 730px; height: 730px; border: 1px solid rgba(162,200,255,.08); border-radius: 50%; right: -210px; top: -160px; box-shadow: 0 0 0 85px rgba(169,214,255,.022), 0 0 0 170px rgba(169,214,255,.018), 0 0 0 255px rgba(169,214,255,.013); }
+    .dark-shell::after { content: ''; pointer-events: none; position: absolute; z-index: -1; inset: 0; background-image: linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px), linear-gradient(0deg, rgba(255,255,255,.018) 1px, transparent 1px); background-size: 64px 64px; mask-image: linear-gradient(90deg, transparent 12%, #000 100%); }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid rgba(255,255,255,.14); padding-block: 24px; }
+    .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .brand-icon { display: grid; place-items: center; width: 47px; height: 47px; border: 2px solid white; border-radius: 12px; font: 24px/1 var(--display); letter-spacing: -.06em; background: rgba(255,255,255,.08); }
+    .brand-words { display: flex; flex-direction: column; gap: 4px; }
+    .brand-words strong { color: #fff; font-size: 13px; letter-spacing: .15em; font-weight: 850; }
+    .brand-words small { color: #9eb3d2; font-size: 10px; letter-spacing: .21em; font-weight: 750; }
+    .nav-actions { display: flex; align-items: center; gap: 13px; }
+    .season-tag { color: #b9d4f9; font-size: 10px; letter-spacing: .17em; font-weight: 800; white-space: nowrap; }
+    .button { border: 1px solid transparent; border-radius: 100px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 13px 19px; font-size: 12px; font-weight: 850; letter-spacing: .055em; text-transform: uppercase; transition: transform .2s, border-color .2s, background .2s; white-space: nowrap; }
+    .button:hover { transform: translateY(-2px); }
+    .button:active { transform: translateY(0); }
+    .button svg { width: 16px; height: 16px; }
+    .button-ghost { color: white; background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.26); }
+    .button-ghost:hover { background: rgba(255,255,255,.16); }
+    .button-blue { color: white; background: #2877df; box-shadow: 0 6px 15px rgba(30,100,218,.2); }
+    .button-blue:hover { background: #1a65c6; }
+    .button-light { color: #1b4277; background: #e7f1ff; }
+    .hero { position: relative; display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: 30px; min-height: 530px; padding-top: 57px; padding-bottom: 76px; }
+    .hero-content { position: relative; z-index: 2; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 12px; color: #a9cbfb; font-size: 11px; font-weight: 850; letter-spacing: .22em; text-transform: uppercase; }
+    .eyebrow::before { content: ''; width: 30px; height: 2px; background: var(--blue-bright); }
+    h1 { margin: 25px 0 0; font: clamp(82px, 9.1vw, 139px)/.86 var(--display); letter-spacing: .006em; text-transform: uppercase; }
+    h1 span { display: block; }
+    h1 .last { color: #b9dfff; }
+    .hero-sub { display: flex; align-items: center; gap: 16px; margin-top: 31px; }
+    .small-rule { width: 4px; height: 50px; background: #4fa4ff; }
+    .hero-sub p { margin: 0; font-size: clamp(15px, 1.7vw, 20px); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; line-height: 1.45; }
+    .hero-sub p span { display: block; color: #7dbbff; }
+    .hero-copy { margin: 27px 0 0; max-width: 440px; color: #bacce6; font-size: 15px; line-height: 1.7; }
+    .score-box { isolation: isolate; position: relative; min-width: 0; border: 1px solid rgba(175,206,248,.27); border-radius: 26px; padding: 34px 36px 30px; background: linear-gradient(144deg, rgba(255,255,255,.09), rgba(255,255,255,.023)); box-shadow: 0 25px 70px rgba(0,0,0,.16); overflow: hidden; }
+    .score-box::after { content: ''; position: absolute; right: -110px; top: 45px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(56,153,255,.18) 0%, transparent 64%); z-index: -1; }
+    .box-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .score-label { color: #9ab9e5; font-size: 11px; font-weight: 850; letter-spacing: .21em; text-transform: uppercase; }
+    .live-dot { display: flex; gap: 7px; align-items: center; font-size: 10px; font-weight: 800; letter-spacing: .09em; color: #b4ddff; text-transform: uppercase; }
+    .live-dot::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #75d9ff; box-shadow: 0 0 0 5px rgba(77,178,255,.13); }
+    .score-number { font: clamp(118px, 14.5vw, 192px)/1 var(--display); letter-spacing: -.025em; margin: 20px 0 5px; color: white; font-variant-numeric: tabular-nums; }
+    .score-caption { font-size: 13px; color: #a5bddd; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+    .score-divider { width: 100%; height: 1px; margin: 28px 0 26px; background: rgba(207,230,255,.22); }
+    .score-bottom { display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; }
+    .remaining { font: 87px/.88 var(--display); color: #76bdff; letter-spacing: -.015em; font-variant-numeric: tabular-nums; }
+    .remaining-label { font-weight: 850; font-size: 22px; letter-spacing: -.04em; text-transform: uppercase; }
+    .remaining-label small { display: block; margin-top: 8px; color: #afc2dc; font-size: 11px; letter-spacing: .14em; font-weight: 750; }
+    .score-updated { margin-top: 29px; padding-top: 19px; border-top: 1px solid rgba(207,230,255,.14); color: #8aa9d0; font-size: 11px; letter-spacing: .03em; }
+    .score-updated time { color: #d1e6ff; }
+    .court-mark { position: absolute; pointer-events: none; width: 245px; top: 50px; right: -80px; opacity: .08; transform: rotate(-20deg); }
+    .ticker { border-top: 1px solid rgba(255,255,255,.13); background: rgba(4,13,30,.48); }
+    .ticker .wrap { display: flex; justify-content: space-between; align-items: center; gap: 30px; padding-block: 17px; }
+    .ticker p { margin: 0; font-size: 11px; letter-spacing: .11em; text-transform: uppercase; font-weight: 800; color: #b7cbe8; }
+    .ticker strong { color: white; }
+    .ticker .star { color: #7fbfff; font-size: 16px; }
+    .main { padding: 61px 0 82px; }
+    .section-heading { display: flex; justify-content: space-between; gap: 22px; align-items: end; margin-bottom: 24px; }
+    .kicker { margin: 0 0 9px; color: #2874db; font-size: 11px; font-weight: 850; letter-spacing: .2em; text-transform: uppercase; }
+    h2 { margin: 0; font-size: clamp(29px,3.2vw,44px); letter-spacing: -.055em; line-height: 1.1; color: #10264a; }
+    .section-detail { margin: 11px 0 0; color: #728198; font-size: 14px; }
+    .progress-percentage { white-space: nowrap; text-align: right; color: #0b2b56; font: 52px/.9 var(--display); }
+    .progress-percentage small { display: block; color: #78879b; font: 750 11px/1.5 var(--sans); letter-spacing: .12em; margin-top: 7px; }
+    .progress-card { background: #fff; border: 1px solid #e1e7f0; padding: 35px 39px 29px; border-radius: 21px; box-shadow: 0 14px 45px rgba(28,51,91,.05); }
+    .bar-labels { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 18px; }
+    .bar-labels span { color: #738196; font-size: 11px; letter-spacing: .15em; text-transform: uppercase; font-weight: 850; }
+    .bar-labels strong { font-size: 15px; color: #1c3c6b; font-variant-numeric: tabular-nums; }
+    .progress-track { height: 24px; border-radius: 18px; background: #e8eef7; overflow: hidden; position: relative; }
+    .progress-fill { height: 100%; width: 83.2%; transition: width .6s cubic-bezier(.2,.8,.2,1); border-radius: inherit; background: linear-gradient(90deg, #1a4f9c 0%, #2887f6 75%, #72bcff 100%); position: relative; }
+    .progress-fill::after { content:''; position: absolute; width: 40px; height: 100%; top: 0; right: 0; background: linear-gradient(90deg,transparent, rgba(255,255,255,.26)); }
+    .progress-foot { margin-top: 15px; display: flex; justify-content: space-between; color: #8b98aa; font-size: 11px; font-weight: 800; letter-spacing: .1em; }
+    .progress-foot strong { color: #2874db; }
+    .stage-wrap { margin-top: 54px; }
+    .milestones { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
+    .milestone { display: flex; flex-direction: column; min-width: 0; min-height: 176px; padding: 21px 19px; border-radius: 17px; border: 1px solid #e2e8f1; background: #fff; position: relative; overflow: hidden; }
+    .milestone::before { content: ''; position: absolute; top: 0; left: 0; height: 4px; width: 100%; background: #e4eaf3; }
+    .milestone.is-done::before { background: #2d85f2; }
+    .milestone.is-next { background: #0b2953; color: white; border-color: #0b2953; box-shadow: 0 14px 25px rgba(17,63,118,.12); }
+    .milestone.is-next::before { background: #6cb9ff; }
+    .milestone .status { display: flex; align-items: center; gap: 7px; color: #8996a8; font-size: 10px; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+    .milestone.is-done .status { color: #2577cf; }
+    .milestone.is-next .status { color: #95ccff; }
+    .milestone-num { margin: auto 0 8px; font: 61px/.85 var(--display); color: #afbacb; letter-spacing: -.015em; }
+    .milestone.is-done .milestone-num { color: #1b4b8a; }
+    .milestone.is-next .milestone-num { color: white; }
+    .milestone-desc { color: #8e9aad; font-size: 11px; font-weight: 700; }
+    .milestone.is-next .milestone-desc { color: #b8d3f1; }
+    .legacy { margin-top: 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+    .legacy-panel { background: #0a254a; color: white; border-radius: 22px; padding: 40px 41px; position: relative; overflow: hidden; }
+    .legacy-panel::before { content: '400'; position: absolute; bottom: -62px; right: 4px; font: 230px/1 var(--display); color: rgba(140,191,255,.085); pointer-events: none; }
+    .legacy-panel .kicker { color: #8dc4ff; }
+    .legacy-panel h3 { margin: 12px 0 16px; color: white; font-size: 32px; letter-spacing: -.045em; line-height: 1.08; max-width: 360px; }
+    .legacy-panel p { position: relative; color: #bed1ea; line-height: 1.7; font-size: 14px; max-width: 435px; margin: 0; }
+    .legacy-panel a { position: relative; display: inline-flex; margin-top: 23px; align-items: center; color: #bbdfff; font-size: 12px; font-weight: 850; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    .next-panel { display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #dfe6f1; background: #e7f0fc; border-radius: 22px; padding: 40px 41px; }
+    .next-panel h3 { font-size: 31px; margin: 9px 0 14px; line-height: 1.1; letter-spacing: -.045em; }
+    .next-panel p { font-size: 14px; color: #667a96; line-height: 1.6; margin: 0; }
+    .next-count { font: 96px/.95 var(--display); color: #1c5ab0; margin-top: 25px; }
+    .next-count span { font: 850 12px/1.4 var(--sans); text-transform: uppercase; letter-spacing: .12em; color: #657f9f; margin-left: 9px; vertical-align: 11px; }
+    .share-strip { display: flex; justify-content: space-between; align-items: center; gap: 25px; margin-top: 62px; padding-top: 33px; border-top: 1px solid #d9e1ed; }
+    .share-strip h3 { margin: 0 0 7px; font-size: 22px; letter-spacing: -.035em; }
+    .share-strip p { margin: 0; color: #78879a; font-size: 13px; }
+    .share-actions { display: flex; gap: 10px; }
+    .footer { padding: 28px 0 35px; background: #081a34; color: #a1b5d0; }
+    .footer-wrap { display: flex; gap: 20px; justify-content: space-between; align-items: center; }
+    .footer strong { color: #eaf3ff; font-size: 11px; letter-spacing: .12em; }
+    .footer p { margin: 7px 0 0; font-size: 11px; line-height: 1.5; }
+    .footer a { font-size: 11px; text-underline-offset: 3px; }
+    dialog { width: min(480px, calc(100% - 30px)); max-height: min(85vh, 680px); overflow-y: auto; border: 0; border-radius: 22px; padding: 0; color: #10264a; box-shadow: 0 34px 100px rgba(0,0,0,.38); }
+    dialog::backdrop { background: rgba(2,11,26,.75); backdrop-filter: blur(6px); }
+    .modal-inside { padding: 32px; }
+    .modal-top { display: flex; align-items: start; justify-content: space-between; gap: 15px; }
+    .modal-top h2 { font-size: 29px; }
+    .close-button { display: grid; place-items: center; width: 34px; height: 34px; border: 0; border-radius: 50%; background: #eef3fa; color: #48607d; font-size: 22px; }
+    .modal-description { margin: 16px 0 25px; color: #61738b; font-size: 14px; line-height: 1.65; }
+    .field-label { display: block; font-weight: 800; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 9px; }
+    .field-row { display: flex; align-items: stretch; gap: 9px; }
+    .field-row input { width: 100%; min-width: 0; border: 1px solid #cbd7e6; border-radius: 11px; padding: 13px; font-weight: 850; font-size: 30px; color: #0f2b52; }
+    .field-row .button { padding-inline: 18px; }
+    .quick-actions { display: flex; align-items: center; gap: 10px; margin: 15px 0 21px; }
+    .quick-actions button { border: 1px solid #d7e1ef; background: #f2f6fc; color: #1c4779; padding: 9px 13px; border-radius: 9px; font-size: 12px; font-weight: 750; }
+    .notice { background: #f2f6fc; border: 1px solid #dce5f2; border-radius: 12px; padding: 15px; font-size: 12px; color: #536a86; line-height: 1.6; }
+    .notice strong { color: #1d3b67; }
+    .reset { display: block; background: transparent; border: 0; color: #536d8d; padding: 0; font-size: 12px; text-decoration: underline; text-underline-offset: 4px; margin-top: 20px; }
+    .toast { position: fixed; z-index: 100; bottom: 25px; left: 50%; transform: translate(-50%, 40px); opacity: 0; pointer-events: none; padding: 13px 21px; font-size: 13px; font-weight: 700; background: #0b2952; color: white; border: 1px solid rgba(255,255,255,.2); border-radius: 11px; box-shadow: 0 14px 35px rgba(0,0,0,.18); max-width: calc(100% - 30px); transition: opacity .25s, transform .25s; }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+    .celebrate-banner { display: none; margin-top: 24px; padding: 17px; color: #09264e; background: #c9e8ff; border-radius: 12px; font-weight: 850; text-align: center; text-transform: uppercase; letter-spacing: .06em; }
+    .achieved-500 .celebrate-banner { display: block; }
+    .achieved-500 .score-number { color: #9ad3ff; }
+    @media (min-width: 1500px) { .hero { min-height: 570px; } }
+    @media (max-width: 920px) {
+      .hero { grid-template-columns: 1fr .87fr; gap: 15px; }
+      .score-box { padding: 26px; }
+      .score-number { font-size: clamp(100px, 13vw, 142px); }
+      .remaining { font-size: 66px; }
+      h1 { font-size: clamp(78px, 9vw, 110px); }
+      .milestones { gap: 9px; }
+      .milestone { padding: 18px 14px; }
+      .milestone-num { font-size: 51px; }
+    }
+    @media (max-width: 720px) {
+      .wrap { width: min(var(--max), calc(100% - 36px)); }
+      .nav { padding-block: 16px; }
+      .brand-icon { width: 43px; height: 43px; }
+      .brand-words strong { font-size: 11px; }
+      .brand-words small { font-size: 9px; }
+      .season-tag { display: none; }
+      .nav .button { padding: 11px 14px; font-size: 10px; }
+      .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 51px; padding-bottom: 50px; gap: 43px; }
+      h1 { margin-top: 23px; font-size: clamp(75px, 16vw, 125px); }
+      .hero-sub { margin-top: 25px; }
+      .hero-copy { margin-top: 18px; }
+      .score-box { max-width: 550px; width: 100%; padding: 28px; }
+      .score-number { font-size: clamp(136px, 26vw, 180px); margin-top: 15px; }
+      .score-bottom { grid-template-columns: 108px 1fr; }
+      .remaining { font-size: 82px; }
+      .ticker .wrap { gap: 13px; }
+      .ticker p { font-size: 9px; letter-spacing: .06em; line-height: 1.7; }
+      .ticker .star { display: none; }
+      .main { padding-top: 44px; }
+      .progress-card { padding: 24px 20px; }
+      .progress-track { height: 19px; }
+      .progress-percentage { font-size: 45px; }
+      .milestones { grid-template-columns: repeat(3, minmax(0,1fr)); }
+      .milestone { min-height: 157px; }
+      .milestone-num { font-size: 58px; }
+      .legacy { grid-template-columns: 1fr; }
+      .legacy-panel, .next-panel { padding: 32px; min-height: 250px; }
+      .share-strip { align-items: start; flex-direction: column; }
+      .footer-wrap { flex-direction: column; align-items: start; }
+    }
+    @media (max-width: 380px) {
+      .brand-words strong { letter-spacing: .07em; }
+      .brand-words small { letter-spacing: .11em; }
+      .nav .button { font-size: 0; gap: 0; width: 43px; height: 43px; padding: 0; }
+      .nav .button svg { width: 18px; height: 18px; }
+      h1 { font-size: 70px; }
+      .score-number { font-size: 120px; }
+      .milestones { gap: 8px; }
+      .milestone { padding: 17px 12px; }
+      .milestone-num { font-size: 47px; }
+      .milestone .status { letter-spacing: 0; font-size: 9px; }
+      .section-heading { align-items: center; }
+      .progress-percentage { font-size: 38px; }
+      .progress-percentage small { font-size: 9px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; } }
+
+    /* Red Lion edition: navy and white remain primary; crimson is the signature accent. */
+    :root { --crimson:#d81e40; --crimson-bright:#ff4566; --crimson-soft:#ffedf1; }
+    .dark-shell { background:radial-gradient(ellipse 62% 94% at 87% 33%, rgba(178,24,61,.23) 0%, transparent 66%),radial-gradient(ellipse 70% 100% at 70% 32%, #12345e 0%, transparent 72%),linear-gradient(130deg,#07172f 0%,#081c39 60%,#061327 100%); }
+    .nav { position:relative; z-index:3; }
+    .brand-icon { width:52px; height:52px; background:#fff; border:2px solid #e9edf6; border-radius:12px; overflow:hidden; padding:4px; }
+    .brand-icon img { width:100%; height:100%; object-fit:contain; }
+    .brand-words small { color:#f3adb9; }
+    .hero { isolation:isolate; }
+    .lion-hero { position:absolute; pointer-events:none; width:min(520px,55%); height:auto; top:40px; right:13%; z-index:-1; opacity:.10; filter:drop-shadow(0 0 25px rgba(216,30,64,.13)); }
+    .lion-tiny { font-size:22px; line-height:1; color:#ff486a; }
+    .eyebrow::before { background:var(--crimson); }
+    h1 .last { color:#fff; position:relative; width:fit-content; }
+    h1 .last::after { content:''; position:absolute; left:2%; bottom:-13px; width:42%; height:8px; border-radius:9px; background:var(--crimson); transform:skewX(-24deg); }
+    .small-rule { background:var(--crimson); }
+    .hero-sub p span { color:#ff91a3; }
+    .score-box { border-color:rgba(244,114,145,.32); box-shadow:0 24px 72px rgba(0,0,0,.17),inset 0 2px 0 rgba(234,53,91,.20); }
+    .score-box::after { background:radial-gradient(circle,rgba(218,30,67,.18),transparent 64%); }
+    .score-label { color:#e4b9c4; }
+    .live-dot { color:#ffd0d9; }
+    .live-dot::before { background:var(--crimson-bright); box-shadow:0 0 0 5px rgba(216,30,64,.17); }
+    .remaining { color:#ff6680; }
+    .score-updated { line-height:1.6; }
+    .score-updated time { color:#fff; }
+    .sync-note { color:#ffc0cd; }
+    .ticker { box-shadow:inset 0 3px 0 rgba(216,30,64,.76); }
+    .ticker .star { color:#ff6885; }
+    .kicker { color:#ce1c3b; }
+    .progress-fill { background:linear-gradient(90deg,#173f7b 0%,#346ec5 64%,#d72047 100%); }
+    .progress-foot strong { color:#c51a39; }
+    .milestone.is-done::before { background:#c92a48; }
+    .milestone.is-next::before { background:#ff506f; }
+    .milestone.is-next { box-shadow:0 14px 30px rgba(216,30,64,.14); }
+    .milestone.is-next .status { color:#ff91a5; }
+    .milestone.is-done .status { color:#c42040; }
+    .legacy-panel::before { color:rgba(235,61,95,.11); }
+    .legacy-panel .kicker { color:#ff8fa2; }
+    .legacy-lion { position:absolute; pointer-events:none; width:300px; bottom:-45px; right:-90px; opacity:.13; }
+    .legacy-panel h3,.legacy-panel p,.legacy-panel a { position:relative; z-index:2; }
+    .next-panel { background:linear-gradient(140deg,#fff3f5 0%,#e6edf8 97%); border-color:#f0d9e0; }
+    .next-count #nextRemaining { font:96px/.95 var(--display); color:#b71c39; margin:0; vertical-align:baseline; }
+    .next-count { color:#b71c39; }
+    .button-light { color:#8d1330; background:#ffe6ec; }
+    .button-light:hover { background:#ffd4de; }
+    .footer { border-top:4px solid #cc1d3f; }
+    .celebrate-banner { color:#fff; background:var(--crimson); }
+    .achieved-500 .score-number { color:#ff7991; }
+    .feed-row { margin-top:25px; padding-top:20px; border-top:1px solid #e4eaf1; display:flex; align-items:center; justify-content:space-between; gap:22px; }
+    .feed-message { display:flex; align-items:flex-start; gap:12px; }
+    .feed-message strong { color:#233959; font-size:13px; }
+    .feed-message p { color:#7b879b; font-size:12px; line-height:1.55; margin:5px 0 0; max-width:685px; }
+    .feed-pulse { display:block; flex:none; width:10px; height:10px; border-radius:50%; background:#b7c0cf; margin-top:5px; box-shadow:0 0 0 5px #eef1f6; }
+    .feed-pulse.is-on { background:#27a782; box-shadow:0 0 0 5px #e2f8ee; }
+    .feed-pulse.is-warn { background:#ef9b29; box-shadow:0 0 0 5px #fff2dc; }
+    .refresh-button { flex:none; appearance:none; border:1px solid #d9e1ed; background:#fff; color:#2b4b76; border-radius:100px; font-weight:750; font-size:11px; padding:11px 15px; }
+    .refresh-button:hover { background:#f6f8fc; border-color:#acbbd1; }
+    @media (max-width:720px) { .lion-hero{width:80%;top:65px;right:-3%;opacity:.075}.feed-row{align-items:flex-start;flex-direction:column;gap:14px}.refresh-button{align-self:flex-start}.brand-icon{width:44px;height:44px}.hero h1 .last::after{height:6px;bottom:-9px} }
+  </style>
+</head>
+<body>
+  <div class="dark-shell">
+    <header class="nav wrap">
+      <a href="#top" class="brand" aria-label="Saint Viator girls volleyball home">
+        <div class="brand-icon" aria-hidden="true"><img src="./assets/red-lion.png" alt="" decoding="async"></div>
+        <span class="brand-words"><strong>SAINT VIATOR</strong><small>GIRLS VOLLEYBALL</small></span>
+      </a>
+      <div class="nav-actions">
+        <span class="season-tag">ARLINGTON HEIGHTS, ILLINOIS</span>
+        <a class="button button-ghost" href="https://www.maxpreps.com/il/arlington-heights/saint-viator-lions/volleyball/schedule/" target="_blank" rel="noopener noreferrer">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7M21 3l-9 9"/><path d="M21 13v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h7"/></svg>
+          Match results
+        </a>
+      </div>
+    </header>
+    <section class="hero wrap" id="top" aria-label="Charlie Curtin career wins">
+      <img class="lion-hero" src="./assets/red-lion.png" alt="" aria-hidden="true" decoding="async">
+      <div class="hero-content">
+        <div class="eyebrow"><span class="lion-tiny">✦</span> The road to 500</div>
+        <h1><span>Charlie</span><span class="last">Curtin.</span></h1>
+        <div class="hero-sub"><div class="small-rule" aria-hidden="true"></div><p>Every win has a story.<span>We're counting every one.</span></p></div>
+        <p class="hero-copy">A celebration of Coach Charlie Curtin and the Saint Viator Lions girls volleyball program. One unforgettable milestone in sight.</p>
+      </div>
+      <div class="score-box">
+        <svg class="court-mark" viewBox="0 0 256 256" fill="none" stroke="white" stroke-width="7" aria-hidden="true"><circle cx="128" cy="128" r="103"/><path d="M26 111c56 5 98-24 127-83M59 199c14-49 59-71 146-78M115 25c29 40 43 79 37 118s-22 61-43 86M215 65c-28 34-50 84-57 160M45 71c36 27 60 66 70 118"/></svg>
+        <div class="box-top"><span class="score-label">Career victories</span><span class="live-dot" id="syncBadge">AUTO-SYNC READY</span></div>
+        <div class="score-number" id="wins" aria-live="polite">416</div>
+        <div class="score-caption">Wins and counting</div>
+        <div class="score-divider"></div>
+        <div class="score-bottom"><div class="remaining" id="remaining" aria-live="polite">84</div><div class="remaining-label">Wins to go<small>Until victory no. 500</small></div></div>
+        <div class="score-updated">LAST CONFIRMED <time id="updated" datetime="2026-10-28">OCT 28, 2026</time> <span id="syncNote" class="sync-note">· Automatic checks start after publishing</span></div>
+        <div class="celebrate-banner" id="celebration">500 career wins! History made.</div>
+      </div>
+    </section>
+    <div class="ticker"><div class="wrap"><p><strong>400th career win</strong> • Achieved in 2025</p><span class="star" aria-hidden="true">✦</span><p><strong>Next stop</strong> • <span id="tickerNext">425 victories</span></p><span class="star" aria-hidden="true">✦</span><p><strong>The goal</strong> • 500 wins</p></div></div>
+  </div>
+
+  <main class="main wrap">
+    <section aria-labelledby="journeyTitle">
+      <div class="section-heading">
+        <div><div class="kicker">The journey</div><h2 id="journeyTitle">Built one victory at a time.</h2><p class="section-detail">A lifetime of work. One extraordinary number.</p></div>
+        <div class="progress-percentage"><span id="percent">83.2%</span><small>OF 500 WINS</small></div>
+      </div>
+      <div class="progress-card">
+        <div class="bar-labels"><span>Career wins</span><strong><span id="barWins">416</span> / 500</strong></div>
+        <div class="progress-track" role="progressbar" aria-label="Progress toward 500 wins" aria-valuemin="0" aria-valuemax="500" aria-valuenow="416" id="progressTrack"><div class="progress-fill" id="fill"></div></div>
+        <div class="progress-foot"><span>0 WINS</span><strong id="progressFoot">84 TO GO</strong><span>500 WINS</span></div>
+        <div class="feed-row">
+          <div class="feed-message"><span class="feed-pulse" id="feedPulse" aria-hidden="true"></span><div><strong id="feedTitle">Automatic win tracking</strong><p id="feedDescription">When published through GitHub Pages, scheduled checks compare the latest reported team record with the confirmed career total.</p></div></div>
+          <button type="button" id="refreshBtn" class="refresh-button" title="Reload the published count (does not retrieve a new game result)">Refresh display <span aria-hidden="true">↻</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="stage-wrap" aria-labelledby="milestoneTitle">
+      <div class="section-heading"><div><div class="kicker">The milestones</div><h2 id="milestoneTitle">The final hundred.</h2><p class="section-detail" id="milestoneSummary">16 down since 400. The next chapter is underway.</p></div></div>
+      <div class="milestones" id="milestones">
+        <article class="milestone is-done"><div class="status">✓ Achieved</div><div class="milestone-num">400</div><div class="milestone-desc">2025 • Milestone victory</div></article>
+        <article class="milestone is-next"><div class="status">↗ Up next</div><div class="milestone-num">425</div><div class="milestone-desc">9 wins away</div></article>
+        <article class="milestone"><div class="status">On the horizon</div><div class="milestone-num">450</div><div class="milestone-desc">34 wins away</div></article>
+        <article class="milestone"><div class="status">On the horizon</div><div class="milestone-num">475</div><div class="milestone-desc">59 wins away</div></article>
+        <article class="milestone"><div class="status">The big one</div><div class="milestone-num">500</div><div class="milestone-desc">84 wins away</div></article>
+      </div>
+    </section>
+
+    <section class="legacy" aria-label="Charlie's legacy and next milestone">
+      <div class="legacy-panel"><img src="./assets/red-lion.png" class="legacy-lion" alt="" aria-hidden="true" loading="lazy">
+        <div class="kicker">A legacy of leadership</div>
+        <h3>More than a number.<br>More than a game.</h3>
+        <p>Coach Curtin earned his 400th career victory during the 2025 sectional playoffs. Each win represents players, teams, and seasons that helped shape the Saint Viator volleyball tradition.</p>
+        <a href="https://www.saintviator.com/news-detail?pk=1656487" target="_blank" rel="noopener noreferrer">Read Saint Viator's 2025 story ↗</a>
+      </div>
+      <div class="next-panel">
+        <div><div class="kicker">Eyes on the next milestone</div><h3 id="nextHeadline">425 is the next stop.</h3><p id="nextDescription">Every match brings this remarkable career one step closer to the next chapter.</p></div>
+        <div class="next-count"><span id="nextRemaining">9</span><span id="nextLabel">wins until 425</span></div>
+      </div>
+    </section>
+
+    <section class="share-strip" aria-label="Share this countdown">
+      <div><h3>Great stories are worth sharing.</h3><p>Bring the Lions community along for the road to 500. Shared links always show the latest published count.</p></div>
+      <div class="share-actions">
+        <button class="button button-light" id="shareBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>Copy share link</button>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="footer-wrap wrap"><div><strong>CHARLIE CURTIN · THE ROAD TO 500</strong><p>A fan-made tribute. Not an official Saint Viator High School website.</p></div><a href="https://www.saintviator.com/team-detail?team=281039" target="_blank" rel="noopener noreferrer">Official Saint Viator volleyball page ↗</a></div></footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    (() => {
+      'use strict';
+      const DEFAULT = { wins: 416, updated: '2026-10-28', sync_status: 'not_configured', checked_at: null };
+      const MILESTONES = [400,425,450,475,500];
+      const $ = id => document.getElementById(id);
+      let state = { ...DEFAULT }, timer;
+      let toastTimer;
+      const clamp = (n,a,b) => Math.max(a,Math.min(b,n));
+      const validWins = n => Number.isInteger(n) && n >= 416 && n <= 9999;
+      const validDate = s => typeof s === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(s) && !Number.isNaN(Date.parse(s+'T12:00:00Z'));
+      const fmtDate = s => new Date((validDate(s)?s:DEFAULT.updated)+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}).toUpperCase();
+      const fmtTime = s => { try { const d = new Date(s); if (Number.isNaN(d.getTime())) return ''; return d.toLocaleString('en-US',{dateStyle:'medium',timeStyle:'short'}); } catch { return ''; } };
+      function toast(message) { const el=$('toast'); el.textContent=message; el.classList.add('show'); clearTimeout(toastTimer); toastTimer=setTimeout(()=>el.classList.remove('show'),3200); }
+      function renderMilestones(wins) {
+        const next=MILESTONES.find(n=>n>wins);
+        $('milestones').replaceChildren(...MILESTONES.map(m=>{
+          const done=wins>=m, upcoming=!done&&next===m;
+          const el=document.createElement('article'); el.className='milestone'+(done?' is-done':upcoming?' is-next':'');
+          const st=document.createElement('div'); st.className='status'; st.textContent=done?'✓ Achieved':upcoming?'↗ Up next':m===500?'The big one':'On the horizon';
+          const num=document.createElement('div'); num.className='milestone-num'; num.textContent=m;
+          const desc=document.createElement('div'); desc.className='milestone-desc'; desc.textContent=done&&m===400?'2025 • Milestone victory':done?'Milestone reached':`${m-wins} ${m-wins===1?'win':'wins'} away`;
+          el.append(st,num,desc); return el;
+        }));
+        $('milestoneSummary').textContent=wins>=500?'500 career victories achieved. On to the next chapter.':`${Math.max(0,wins-400)} down since 400. ${Math.max(0,500-wins)} to go until 500.`;
+        $('tickerNext').textContent=next?`${next} victories`:'500 achieved!';
+        $('nextHeadline').textContent=next?`${next} is the next stop.`:'500 wins. What a legacy.';
+        $('nextDescription').textContent=next?'Every match brings this remarkable career one step closer to the next chapter.':'A remarkable achievement, built over seasons of commitment and teamwork.';
+        $('nextRemaining').textContent=next?next-wins:'500';
+        $('nextLabel').textContent=next?`wins until ${next}`:'and counting';
+      }
+      function render() {
+        const wins=state.wins, toGo=Math.max(0,500-wins), percent=clamp(wins/500*100,0,100);
+        $('wins').textContent=wins.toLocaleString('en-US');
+        $('remaining').textContent=toGo;
+        $('barWins').textContent=wins.toLocaleString('en-US');
+        $('percent').textContent=percent.toFixed(1)+'%';
+        $('fill').style.width=percent+'%';
+        $('progressTrack').setAttribute('aria-valuenow',String(clamp(wins,0,500)));
+        $('progressFoot').textContent=toGo===0?'GOAL REACHED':`${toGo} TO GO`;
+        $('updated').dateTime=validDate(state.updated)?state.updated:DEFAULT.updated;
+        $('updated').textContent=fmtDate(state.updated);
+        document.body.classList.toggle('achieved-500',wins>=500);
+        renderMilestones(wins);
+        const live=state.sync_status==='ok', lag=state.sync_status==='source_lag', warn=state.sync_status==='source_unavailable'||lag;
+        $('syncBadge').textContent=live?'RESULTS FEED ON':lag?'SCORES PENDING':warn?'FEED DELAYED':'AUTO-SYNC READY';
+        $('feedPulse').className='feed-pulse'+(live?' is-on':warn?' is-warn':'');
+        const lastChecked=state.checked_at?fmtTime(state.checked_at):'';
+        $('feedTitle').textContent=live?'Automatic result checks are active':lag?'Public source has not caught up yet':warn?'Latest check could not confirm results':'Automatic win tracking is ready';
+        $('feedDescription').textContent=live?`Checking MaxPreps every six hours. ${lastChecked?'Last checked '+lastChecked+'. ':''}New wins appear after the source updates. Confirm any discrepancy with the school.`:warn?`The last verified total is still shown. ${lastChecked?'Last attempted '+lastChecked+'. ':''}The public results source may be delayed or unavailable.`:'Publish this website with GitHub Pages and enable the included GitHub Actions workflow to start scheduled checks.';
+        $('syncNote').textContent=live?'· Public results feed':warn?'· Awaiting score confirmation':'· Auto-checks activate after publishing';
+      }
+      async function syncCount(showToast=false) {
+        if (location.protocol==='file:') { if (showToast) toast('Publish the site to enable automatic result checks.'); return; }
+        try {
+          const result=await fetch('./wins.json?refresh='+Date.now(),{cache:'no-store'});
+          if (!result.ok) throw new Error('No published count');
+          const json=await result.json();
+          if (!validWins(json.wins)||!validDate(json.updated)) throw new Error('Invalid published count');
+          const previous=state.wins;
+          state={ wins:json.wins, updated:json.updated, checked_at:json.checked_at||null, sync_status:json.sync_status||'not_configured' };
+          render();
+          if (showToast) toast(state.wins!==previous?`Updated to ${state.wins} wins.`:'Showing the latest published win total.');
+        } catch { if (showToast) toast('Could not retrieve the published count.'); }
+      }
+      $('refreshBtn').addEventListener('click',()=>syncCount(true));
+      $('shareBtn').addEventListener('click', async ()=>{
+        if (location.protocol==='file:') { toast('Publish the website before sharing a live URL.'); return; }
+        const url=new URL(location.href); url.search=''; url.hash='';
+        try { if(navigator.clipboard&&window.isSecureContext) await navigator.clipboard.writeText(url.toString()); else {
+          const t=document.createElement('textarea'); t.value=url.toString(); t.style.position='fixed'; t.style.opacity='0'; document.body.appendChild(t);t.select();if(!document.execCommand('copy')) throw Error('Clipboard failed');t.remove(); }
+          toast('Live countdown link copied.');
+        } catch { toast('Use the browser’s Share menu to send this link.'); }
+      });
+      render();
+      syncCount();
+      timer=setInterval(()=>{if(!document.hidden)syncCount();},5*60*1000);
+      document.addEventListener('visibilitychange',()=>{if(!document.hidden)syncCount();});
+    })();
+  </script>
+</body>
+</html>
