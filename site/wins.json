@@ -1,10 +1,10 @@
 {
   "wins": 417,
   "updated": "2026-10-30",
-  "checked_at": "2026-10-31T18:57:54Z",
-  "sync_status": "ok",
+  "checked_at": "2026-11-01T01:25:02Z",
+  "sync_status": "source_unavailable",
   "source": "MaxPreps Saint Viator girls varsity volleyball season record",
   "source_url": "https://www.maxpreps.com/il/arlington-heights/saint-viator-lions/volleyball/schedule/",
-  "season": "2026-27",
-  "reported_season_wins": 17
+  "season": null,
+  "reported_season_wins": null
 }
